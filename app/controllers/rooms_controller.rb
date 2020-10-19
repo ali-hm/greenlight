@@ -169,8 +169,8 @@ class RoomsController < ApplicationController
 
     # Join the user in and start the meeting.
     opts = default_meeting_options
-    opts[:user_is_moderator] = true
-
+    #opts[:user_is_moderator] = true
+    opts[:user_is_moderator] = @room.owned_by?(current_user) || room_setting_with_config("joinModerator") || current_user.role.get_permission("is_moderator")
     # Include the user's choices for the room settings
     @room_settings = JSON.parse(@room[:room_settings])
     opts[:mute_on_start] = room_setting_with_config("muteOnStart")

@@ -88,9 +88,9 @@
                     <%= f.check_box :send_demoted_email, checked: @selected_role.get_permission("send_demoted_email"), class: "custom-switch-input", disabled: edit_disabled || !current_role.get_permission("send_demoted_email") %>
                 <span class="custom-switch-indicator float-right"></span>
             </label>
-            <label class="custom-switch pl-0 mt-3 mb-3 w-100 text-left d-inline-block <%="form-disable" if !current_role.get_permission("is_moderator") %>">
+            <label class="custom-switch pl-0 mt-3 mb-3 w-100 text-left d-inline-block ">
                 <span class="ml-0 custom-switch-description"><%= t("administrator.roles.is_moderator")%></span>
-                    <%= f.check_box :is_moderator, checked: @selected_role.get_permission("is_moderator"), class: "custom-switch-input", disabled: edit_disabled || !current_role.get_permission("is_moderator") %>
+                    <%= f.check_box :is_moderator, checked: @selected_role.get_permission("is_moderator"), class: "custom-switch-input", disabled: edit_disabled %>
                 <span class="custom-switch-indicator float-right"></span>
             </label>
 
