@@ -153,6 +153,7 @@ en:
       edit_roles: Allow users with this role to edit other roles
       manage_users: Allow users with this role to manage users
       invalid_assignment: There was a problem assigning the roles to the user. Please check the values and try again
+      is_moderator: Is Teacher (Moderator)
       colour:
         title: Role Colour
         info: Set the colour that will be associated with the role
